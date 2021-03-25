@@ -10,24 +10,24 @@ import { IOMDBResponse } from './omdbresponse';
 
 })
 export class AppComponent {
-  
-  movieData:IOMDBResponse;
-  errorMessage:any;
 
-  constructor(private _ombdbService:OmdbApiService) {
+  movieData: IOMDBResponse;
+  errorMessage: any;
+
+  constructor(private _ombdbService: OmdbApiService) {
 
   }
 
-  getMovieDetails(movieName:string) :boolean {
+  getMovieDetails(movieName: string): boolean {
     this._ombdbService.getMovieData(movieName).subscribe(
       movieData => {
-        this.movieData=movieData;
+        this.movieData = movieData;
         console.log('Director name: ' + this.movieData.Director);
       },
       error => this.errorMessage = <any>error
-      );
-      return false;
+    );
+    return false;
 
-    }
   }
+}
 
