@@ -11,7 +11,7 @@ import { IOMDBResponse } from '../omdbresponse';
 export class OmdbApiService {
 
   private _siteURL="https://www.omdbapi.com/";
-  private _key='apikey=c31ae126&t=';
+  private _key='?apikey=c31ae126&t=';
   constructor(private _http:HttpClient) { }
 
   getMovieData(movieName): Observable<IOMDBResponse> {
